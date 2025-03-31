@@ -20,14 +20,14 @@ Ensure you have Python installed (Python 3.7+ recommended).
 ### **Installation**  
 Clone the repository:  
 ```sh
-git clone https://github.com/yourusername/custom-regex-engine.git
-cd custom-regex-engine
+git clone https://github.com/yourusername/Regex.git
+cd Regex
 ```
 
 ### **Usage**  
 Run the CLI to match a string against a regex pattern:  
 ```sh
-python regex_engine.py "a|b+" "a" "b" "bb" "c"
+python main.py "a|b+" "a" "b" "bb" "c"
 ```
 Output:  
 ```
