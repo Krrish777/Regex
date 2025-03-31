@@ -61,8 +61,21 @@ class Regex:
             return True  
 
         elif token['type'] == 'CHAR_SET':
-            charset = token['value'][1:-1]  
-            return char in charset
+            charset = token['value'][1:-1] 
+            
+            i = 0
+            while i < len(charset):
+                if i + 2 < len(charset) and charset[ i + 1 ] == '-':
+                    if charset[i] <= char <= charset[i+2]:
+                        return True
+                    i +=3
+                else:
+                    if char == charset[i]:
+                        return True
+                    i +=1
+            return False
+             
+            # return char in charset
 
         elif token['type'] == 'ESCAPE':
             escaped_char = token['value'][1]
