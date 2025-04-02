@@ -61,7 +61,7 @@ class Regex:
             return True  
 
         elif token['type'] == 'CHAR_SET':
-            charset = token['value'][1:-1] 
+            charset = token['value'][1:-1] # Remove the brackets
             
             i = 0
             while i < len(charset):
@@ -74,8 +74,6 @@ class Regex:
                         return True
                     i +=1
             return False
-             
-            # return char in charset
 
         elif token['type'] == 'ESCAPE':
             escaped_char = token['value'][1]
